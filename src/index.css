@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    cursor: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #09090B;
+    color: #FAFAFA;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  @media (max-width: 768px) {
+    html { cursor: auto; }
+  }
+
+  ::selection {
+    background: rgba(255, 60, 0, 0.2);
+    color: #FAFAFA;
+  }
+}
+
+@layer utilities {
+  .text-stroke-white-sm {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.08);
+  }
+
+  .text-stroke-black-sm {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.06);
+  }
+
+  .bg-grid-dark {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .bg-grid-light {
+    background-image:
+      linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .accent-glow {
+    background: radial-gradient(ellipse 60% 50% at 20% 50%, rgba(255, 60, 0, 0.07), transparent);
+  }
+
+  .border-d {
+    border-color: rgba(255, 255, 255, 0.07);
+  }
+}
