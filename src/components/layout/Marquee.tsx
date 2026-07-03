@@ -1,17 +1,17 @@
 const ITEMS = [
-  { text: '✦ Trybild', hi: true },
+  { text: '✦ TryBild', hi: true },
   { text: 'Mumbai, India', hi: false },
-  { text: 'WhatsApp-Native', hi: false },
-  { text: 'Hindi AI', hi: false },
-  { text: '✦ MaalSaathi', hi: true },
-  { text: 'Truck Fleet Management', hi: false },
-  { text: '71+ Paying Customers', hi: false },
+  { text: 'Building tools for business, logistics & local AI', hi: false },
+  { text: '✦ TruckHisaab', hi: true },
+  { text: '1000+ users on WhatsApp', hi: false },
+  { text: 'Play Store soon', hi: false },
   { text: '✦ Attendr', hi: true },
   { text: 'GPS Attendance', hi: false },
-  { text: 'Launching Soon', hi: false },
-  { text: 'Ship Fast', hi: false },
-  { text: 'AI-Powered', hi: false },
-  { text: 'Real Problems', hi: false },
+  { text: 'Soon on Play Store', hi: false },
+  { text: '✦ JellyClaw', hi: true },
+  { text: 'The Local AI Office', hi: false },
+  { text: 'Open source', hi: false },
+  { text: 'Ship fast', hi: false },
 ]
 
 const ALL = [...ITEMS, ...ITEMS]

@@ -40,7 +40,7 @@ export function ProductShowcase() {
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 h-24 bg-accent/[0.04] blur-3xl pointer-events-none" />
 
             {/* Browser chrome */}
-            <div className="flex items-center gap-3 px-5 py-3 border-b border-white/[0.06] bg-[#09090B]">
+            <div className="flex items-center gap-3 px-5 py-3 border-b border-white/[0.06] bg-[#0D0B0A]">
               <div className="flex gap-1.5">
                 <span className="w-2.5 h-2.5 rounded-full bg-white/[0.08]" />
                 <span className="w-2.5 h-2.5 rounded-full bg-white/[0.08]" />
@@ -48,7 +48,7 @@ export function ProductShowcase() {
               </div>
               <div className="flex-1 max-w-[260px] mx-auto bg-white/[0.03] border border-white/[0.05] rounded-full px-4 py-1 text-center">
                 <span className="font-mono text-[0.52rem] text-white/20 tracking-widest">
-                  MaalSaathi · WhatsApp AI for Transport
+                  TruckHisaab · WhatsApp AI for Transport
                 </span>
               </div>
               <div className="ml-auto flex items-center gap-2">
@@ -67,7 +67,7 @@ export function ProductShowcase() {
                     <Truck size={13} className="text-accent" />
                   </div>
                   <div>
-                    <p className="font-sans text-xs font-semibold text-white">MaalSaathi</p>
+                    <p className="font-sans text-xs font-semibold text-white">TruckHisaab</p>
                     <p className="font-mono text-[0.46rem] text-white/25 uppercase tracking-wider">
                       Hinglish AI · Trip Management
                     </p>
@@ -161,7 +161,7 @@ export function ProductShowcase() {
                           height: `${h}%`,
                           backgroundColor:
                             i === BAR_HEIGHTS.length - 1
-                              ? 'rgba(255,60,0,0.65)'
+                              ? 'rgba(255,69,20,0.65)'
                               : 'rgba(255,255,255,0.06)',
                         }}
                       />

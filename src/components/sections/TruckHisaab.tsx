@@ -1,5 +1,7 @@
 import { CheckCircle2, MessageSquare, BarChart2, Languages, Zap } from 'lucide-react'
 import { RevealOnScroll } from '@/components/common/RevealOnScroll'
+import { NotifyForm } from '@/components/common/NotifyForm'
+import { BREVO_TRUCKHISAAB_FORM_URL } from '@/lib/forms'
 
 const FEATURES = [
   {
@@ -31,9 +33,9 @@ const WORKFLOW = [
   'Automated P&L and monthly report — zero spreadsheets',
 ]
 
-export function MaalSaathi() {
+export function TruckHisaab() {
   return (
-    <section id="products" className="bg-black border-t border-white/[0.06]">
+    <section id="products" className="bg-brand-gradient border-t border-white/[0.06]">
       <div className="max-w-[1200px] mx-auto px-6 py-24 md:py-32">
         {/* Section label */}
         <RevealOnScroll>
@@ -49,9 +51,9 @@ export function MaalSaathi() {
               className="font-bebas leading-[0.88] tracking-[0.01em] text-white"
               style={{ fontSize: 'clamp(3.5rem, 7vw, 6.5rem)' }}
             >
-              Maal
+              Truck
               <br />
-              <span className="text-accent">Saathi</span>
+              <span className="text-accent">Hisaab</span>
             </h2>
           </RevealOnScroll>
 
@@ -61,8 +63,10 @@ export function MaalSaathi() {
               Trip logging, expense tracking, and P&L — in Hindi, without any app.
             </p>
             <div className="inline-flex items-center gap-2.5 px-4 py-2.5 border border-white/[0.08] rounded-sm bg-white/[0.03]">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-              <span className="font-mono text-[0.62rem] tracking-[0.15em] uppercase text-white/35">Currently in Development</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+              <span className="font-mono text-[0.62rem] tracking-[0.15em] uppercase text-white/35">
+                Live · 1000+ users on WhatsApp
+              </span>
             </div>
           </RevealOnScroll>
         </div>
@@ -101,7 +105,7 @@ export function MaalSaathi() {
             </div>
             <div className="grid md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/[0.06]">
               {WORKFLOW.map((step, i) => (
-                <div key={i} className="p-6 bg-[#0C0C0E]">
+                <div key={i} className="p-6 bg-black/40">
                   <div className="flex items-center gap-2 mb-3">
                     <CheckCircle2 size={12} className="text-accent shrink-0" />
                     <span className="font-mono text-[0.55rem] tracking-[0.18em] uppercase text-accent/60">
@@ -115,21 +119,20 @@ export function MaalSaathi() {
           </div>
         </RevealOnScroll>
 
-        {/* Pricing strip */}
+        {/* Play Store notify strip */}
         <RevealOnScroll delay={0.1}>
-          <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 px-6 py-5 border border-white/[0.06] bg-surface rounded-sm">
+          <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-5 px-6 py-5 border border-white/[0.06] bg-surface rounded-sm">
             <div className="flex-1">
-              <p className="font-sans text-sm font-medium text-white mb-1">Currently serving paying customers</p>
+              <p className="font-sans text-sm font-medium text-white mb-1">Play Store — Coming Soon</p>
               <p className="font-sans text-xs text-white/30">
-                Plans from <span className="text-white/60">₹199/month</span> · No app download required · Works on WhatsApp
+                Plans from <span className="text-white/60">₹199/month</span> · Works on WhatsApp today · Get notified when the app drops
               </p>
             </div>
-            <a
-              href="mailto:trybild@gmail.com"
-              className="font-sans text-[0.78rem] font-medium text-white/50 hover:text-white border border-white/[0.08] hover:border-white/20 px-4 py-2 rounded-sm transition-all duration-200 no-underline shrink-0"
-            >
-              Contact us →
-            </a>
+            <NotifyForm
+              formUrl={BREVO_TRUCKHISAAB_FORM_URL}
+              successText="You'll be the first to know."
+              className="shrink-0 w-full sm:w-auto sm:min-w-[300px]"
+            />
           </div>
         </RevealOnScroll>
       </div>

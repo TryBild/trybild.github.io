@@ -2,8 +2,8 @@ import { motion } from 'framer-motion'
 import { ArrowRight, TrendingUp, Truck, Users } from 'lucide-react'
 
 const STATS = [
-  { value: '71+',    label: 'Paying customers' },
-  { value: '2',      label: 'Products live' },
+  { value: '3',      label: 'Products' },
+  { value: '1000+',  label: 'Users on WhatsApp' },
   { value: '0',      label: 'App downloads needed' },
   { value: '2025',   label: 'Founded, Mumbai' },
 ]
@@ -45,7 +45,7 @@ function ProductMockup() {
             <Truck size={14} className="text-accent" />
           </div>
           <div>
-            <p className="font-sans text-xs font-semibold text-white">MaalSaathi</p>
+            <p className="font-sans text-xs font-semibold text-white">TruckHisaab</p>
             <div className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
               <span className="font-mono text-[0.52rem] text-white/30 uppercase tracking-widest">WhatsApp · Active</span>
@@ -114,7 +114,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen bg-black overflow-hidden flex flex-col"
+      className="relative min-h-screen bg-brand-gradient overflow-hidden flex flex-col"
     >
       {/* Background grid */}
       <div className="absolute inset-0 bg-grid-dark opacity-100 pointer-events-none" />
@@ -139,7 +139,7 @@ export function Hero() {
             >
               <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
               <span className="font-mono text-[0.6rem] tracking-[0.15em] uppercase text-white/40">
-                2 products live · Mumbai, India
+                3 products · Mumbai, India
               </span>
             </motion.div>
 
@@ -169,8 +169,8 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.42 }}
               className="font-sans text-[1rem] leading-[1.75] text-white/40 max-w-[420px] mb-10"
             >
-              We build WhatsApp-native, Hindi-first software for Indian businesses.
-              No app stores. No friction. Just products that work.
+              We build tools for business, logistics, and local AI.
+              From Mumbai, for everywhere.
             </motion.p>
 
             {/* CTAs */}
