@@ -28,7 +28,7 @@ export function About() {
         {/* Label */}
         <RevealOnScroll>
           <p className="font-mono text-[0.6rem] tracking-[0.22em] uppercase text-black/25 mb-6">
-            03 — Studio
+            04 — Studio
           </p>
         </RevealOnScroll>
 

@@ -3,8 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 const NAV_LINKS = [
-  { label: 'Products', href: '#products' },
+  { label: 'TruckHisaab', href: '#products' },
   { label: 'Attendr', href: '#attendr' },
+  { label: 'JellyClaw', href: '#jellyclaw' },
   { label: 'About', href: '#about' },
 ]
 

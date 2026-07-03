@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { MapPin, Users, BookOpen, BarChart3, ArrowRight, CheckCircle, Sparkles } from 'lucide-react'
+import { MapPin, Users, BookOpen, BarChart3, Sparkles } from 'lucide-react'
 import { RevealOnScroll } from '@/components/common/RevealOnScroll'
+import { NotifyForm } from '@/components/common/NotifyForm'
+import { BREVO_ATTENDR_FORM_URL } from '@/lib/forms'
 
 const FEATURES = [
   {
@@ -27,21 +27,13 @@ const FEATURES = [
 ]
 
 export function Attendr() {
-  const [email, setEmail] = useState('')
-  const [done, setDone] = useState(false)
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (email.trim()) setDone(true)
-  }
-
   return (
-    <section id="attendr" className="bg-black border-t border-white/[0.06]">
+    <section id="attendr" className="bg-brand-gradient-r border-t border-white/[0.06]">
       <div className="max-w-[1200px] mx-auto px-6 py-24 md:py-32">
         {/* Section label */}
         <RevealOnScroll>
           <p className="font-mono text-[0.6rem] tracking-[0.22em] uppercase text-white/20 mb-6">
-            02 — Coming next
+            02 — Coming soon
           </p>
         </RevealOnScroll>
 
@@ -52,7 +44,7 @@ export function Attendr() {
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent/10 border border-accent/20 rounded-full">
                 <Sparkles size={10} className="text-accent" />
                 <span className="font-mono text-[0.55rem] tracking-[0.18em] uppercase text-accent">
-                  Building · 2026
+                  Soon on Play Store
                 </span>
               </div>
             </div>
@@ -67,7 +59,7 @@ export function Attendr() {
               className="font-serif italic text-white/25 mt-1"
               style={{ fontSize: 'clamp(1.2rem, 2.5vw, 1.8rem)' }}
             >
-              Launching Soon.
+              Attendance, verified.
             </p>
           </RevealOnScroll>
 
@@ -78,46 +70,10 @@ export function Attendr() {
             </p>
 
             {/* Waitlist form */}
-            <AnimatePresence mode="wait">
-              {!done ? (
-                <motion.form
-                  key="form"
-                  onSubmit={handleSubmit}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.25 }}
-                  className="flex gap-0 max-w-[380px]"
-                >
-                  <input
-                    type="email"
-                    required
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 min-w-0 bg-white/[0.04] border border-white/[0.1] border-r-0 px-4 py-2.5 font-sans text-sm text-white placeholder:text-white/20 outline-none focus:border-white/20 transition-colors duration-200 rounded-l-sm"
-                  />
-                  <motion.button
-                    type="submit"
-                    className="flex items-center gap-2 px-4 py-2.5 bg-accent text-white font-sans text-[0.78rem] font-semibold cursor-pointer transition-all duration-200 hover:bg-accent/90 rounded-r-sm shrink-0"
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    Notify me <ArrowRight size={12} />
-                  </motion.button>
-                </motion.form>
-              ) : (
-                <motion.div
-                  key="done"
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="flex items-center gap-2.5 text-green-400"
-                >
-                  <CheckCircle size={16} />
-                  <span className="font-sans text-sm">You're on the early access list.</span>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <NotifyForm
+              formUrl={BREVO_ATTENDR_FORM_URL}
+              successText="You're on the early access list."
+            />
 
             <p className="font-mono text-[0.55rem] tracking-[0.1em] uppercase text-white/15 mt-3">
               No spam. Early access notification only.
@@ -150,13 +106,13 @@ export function Attendr() {
         <RevealOnScroll delay={0.15}>
           <div className="mt-6 flex items-center justify-between px-6 py-4 border border-white/[0.06] bg-surface rounded-sm">
             <p className="font-mono text-[0.58rem] tracking-[0.14em] uppercase text-white/20">
-              Attendr · A Trybild product · In active development
+              Attendr · A TryBild product · Soon on Play Store
             </p>
             <span
               className="font-bebas text-stroke-white-sm hidden sm:block"
               style={{ fontSize: '3rem', lineHeight: 1 }}
             >
-              2026
+              SOON
             </span>
           </div>
         </RevealOnScroll>

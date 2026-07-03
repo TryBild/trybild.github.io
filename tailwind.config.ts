@@ -9,13 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        black:        '#09090B',
-        surface:      '#111113',
-        'surface-2':  '#1C1C1E',
-        white:        '#FAFAFA',
+        black:        '#100E0D',
+        surface:      '#16120F',
+        'surface-2':  '#201913',
+        white:        '#F0EEEB',
         paper:        '#F5F1E8',
         'paper-dim':  '#EDE9DE',
-        accent:       '#FF3C00',
+        accent:       '#FF4514',
+        jelly:        '#FF8CC8',
         muted:        '#71717A',
         'muted-dark': '#52525B',
         green:        '#22C55E',
