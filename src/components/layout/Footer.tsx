@@ -22,7 +22,7 @@ const SOCIALS: { label: string; href: string; icon?: LucideIcon; path?: string }
   { label: 'X', href: 'https://x.com/trybild', path: X_PATH },
   { label: 'GitHub', href: 'https://github.com/trybild', icon: Github },
   { label: 'Reddit', href: 'https://reddit.com/r/JellyClaw', path: REDDIT_PATH },
-  { label: 'Discord', href: 'https://discord.gg/jellyclaw', path: DISCORD_PATH },
+  { label: 'Discord', href: 'https://discord.gg/GUbgEhHvxt', path: DISCORD_PATH },
   { label: 'Email', href: 'mailto:hello@trybild.com', icon: Mail },
 ]
 
