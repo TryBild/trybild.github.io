@@ -9,21 +9,30 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        black:        '#100E0D',
-        surface:      '#16120F',
-        'surface-2':  '#201913',
-        white:        '#F0EEEB',
+        // Retro pixel-arcade palette
+        black:        '#140d0a',  // page background
+        surface:      '#1c120c',  // card/panel background
+        'surface-2':  '#241610',  // panel hover/active
+        line:         '#3a2618',  // default 4px borders
+        'line-2':     '#2b1c12',  // nav/footer divider borders
+        white:        '#ffffff',  // headings
+        cream:        '#e9d8cc',  // body text
+        accent:       '#fe3c00',  // TryBild orange
+        amber:        '#ffb000',  // badges, LIVE status, footer links
+        jelly:        '#ff4fa3',  // JellyClaw OPEN SOURCE badge only
+        muted:        '#c9a48f',  // muted text (minimum contrast)
+        green:        '#22C55E',
+        // Transitional tokens still used by pages awaiting the pixel rewrite
         paper:        '#F5F1E8',
         'paper-dim':  '#EDE9DE',
-        accent:       '#FF4514',
-        jelly:        '#FF8CC8',
-        muted:        '#71717A',
         'muted-dark': '#52525B',
-        green:        '#22C55E',
         'border-d':   'rgba(255,255,255,0.07)',
         'border-l':   '#E4E4E7',
       },
       fontFamily: {
+        pixel: ['"Press Start 2P"', 'monospace'],
+        vt:    ['VT323', 'monospace'],
+        // Transitional fonts still used by pages awaiting the pixel rewrite
         sans:  ['Inter', 'system-ui', 'sans-serif'],
         bebas: ['"Bebas Neue"', 'sans-serif'],
         serif: ['"Instrument Serif"', 'serif'],
