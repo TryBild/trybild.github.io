@@ -1,4 +1,5 @@
 import { Github, Instagram, Facebook, Mail, type LucideIcon } from 'lucide-react'
+import logoMark from '../../../android-chrome-192x192.png'
 
 // Brand icons lucide doesn't ship (X, Reddit, Bluesky) as inline SVG paths.
 const X_PATH =
@@ -23,13 +24,14 @@ const SOCIALS: { label: string; href: string; icon?: LucideIcon; path?: string }
   { label: 'Reddit', href: 'https://reddit.com/r/trybild', path: REDDIT_PATH },
   { label: 'Bluesky', href: 'https://bsky.app/profile/trybild.bsky.social', path: BLUESKY_PATH },
   { label: 'GitHub', href: 'https://github.com/TryBild', icon: Github },
-  { label: 'Email', href: 'mailto:trybild@gmail.com', icon: Mail },
+  { label: 'Email', href: 'mailto:hello@trybild.com', icon: Mail },
 ]
 
 const PRODUCTS = [
-  { label: 'TruckHisaab', href: '#products' },
-  { label: 'Attendr', href: '#attendr' },
-  { label: 'JellyClaw', href: '#jellyclaw' },
+  { label: 'TruckHisaab', href: '/products#truckhisaab' },
+  { label: 'Attendr', href: '/products#attendr' },
+  { label: 'JellyClaw', href: '/products#jellyclaw' },
+  { label: 'RentPey', href: '/products#rentpey' },
 ]
 
 export function Footer() {
@@ -40,11 +42,14 @@ export function Footer() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 pb-12 border-b border-white/[0.06]">
           {/* Brand */}
           <div>
-            <a href="/" className="font-bebas text-[2.2rem] tracking-[0.06em] text-white no-underline leading-none">
-              TRY<span className="text-accent">BILD</span>
+            <a href="/" className="inline-flex items-center gap-2.5 font-bebas text-[2.2rem] tracking-[0.06em] text-white no-underline leading-none">
+              <img src={logoMark} alt="" width={32} height={32} className="w-8 h-8" />
+              <span>
+                TRY<span className="text-accent">BILD</span>
+              </span>
             </a>
             <p className="font-sans text-sm text-white/30 mt-3 max-w-[280px] leading-relaxed">
-              Building tools for business, logistics, and local AI. Built in Mumbai.
+              TryBild Technologies · Mumbai, India
             </p>
           </div>
 
@@ -63,8 +68,10 @@ export function Footer() {
             <div>
               <p className="font-mono text-[0.6rem] tracking-[0.2em] uppercase text-white/20 mb-4">Company</p>
               <div className="flex flex-col gap-3">
-                <a href="#about" className="font-sans text-sm text-white/40 hover:text-white transition-colors no-underline">About</a>
-                <a href="mailto:trybild@gmail.com" className="font-sans text-sm text-white/40 hover:text-white transition-colors no-underline">Contact</a>
+                <a href="/about" className="font-sans text-sm text-white/40 hover:text-white transition-colors no-underline">About</a>
+                <a href="/contact" className="font-sans text-sm text-white/40 hover:text-white transition-colors no-underline">Contact</a>
+                <a href="mailto:hello@trybild.com" className="font-sans text-sm text-white/40 hover:text-white transition-colors no-underline">hello@trybild.com</a>
+                <a href="mailto:support@trybild.com" className="font-sans text-sm text-white/40 hover:text-white transition-colors no-underline">support@trybild.com</a>
               </div>
             </div>
           </div>
@@ -88,7 +95,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 pt-6">
           <p className="font-sans text-xs text-white/20">
-            © 2026 TryBild. All rights reserved.
+            © 2026 TryBild Technologies. All rights reserved.
           </p>
           <p className="font-sans text-xs text-white/20">
             Established 2025 · Building tools for business, logistics & local AI.
