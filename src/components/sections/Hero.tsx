@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { ArrowRight, TrendingUp, Truck, Users } from 'lucide-react'
 
 const STATS = [
-  { value: '3',      label: 'Products' },
+  { value: '4',      label: 'Products' },
   { value: '1000+',  label: 'Users on WhatsApp' },
   { value: '0',      label: 'App downloads needed' },
   { value: '2025',   label: 'Founded, Mumbai' },
@@ -139,7 +139,7 @@ export function Hero() {
             >
               <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
               <span className="font-mono text-[0.6rem] tracking-[0.15em] uppercase text-white/40">
-                3 products · Mumbai, India
+                4 products · Mumbai, India
               </span>
             </motion.div>
 
