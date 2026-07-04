@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import logoMark from '../../../android-chrome-192x192.png'
 
 const NAV_LINKS = [
   { label: 'TruckHisaab', href: '#products' },
@@ -35,10 +36,13 @@ export function Navbar() {
           {/* Logo */}
           <a
             href="/"
-            className="font-bebas text-[1.4rem] tracking-[0.08em] text-white leading-none no-underline"
+            className="flex items-center gap-2 font-bebas text-[1.4rem] tracking-[0.08em] text-white leading-none no-underline"
           >
-            TRYBILD
-            <sup className="font-mono text-[0.32rem] tracking-[0.2em] align-super text-white/30 ml-0.5">®</sup>
+            <img src={logoMark} alt="" width={28} height={28} className="w-7 h-7" />
+            <span>
+              TRYBILD
+              <sup className="font-mono text-[0.32rem] tracking-[0.2em] align-super text-white/30 ml-0.5">®</sup>
+            </span>
           </a>
 
           {/* Desktop nav */}
