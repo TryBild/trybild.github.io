@@ -3,11 +3,16 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
 const NAV_LINKS = [
-  { label: 'TruckHisaab', href: '#products' },
-  { label: 'Attendr', href: '#attendr' },
-  { label: 'JellyClaw', href: '#jellyclaw' },
-  { label: 'About', href: '#about' },
+  { label: 'TruckHisaab', href: '/products#truckhisaab' },
+  { label: 'Attendr', href: '/products#attendr' },
+  { label: 'JellyClaw', href: '/products#jellyclaw' },
+  { label: 'About', href: '/about' },
 ]
+
+// GitHub Pages serves /products.html at /products — normalize both to one form.
+const currentPath = window.location.pathname.replace(/\.html$/, '')
+
+const isActive = (href: string) => href.split('#')[0] === currentPath
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -47,7 +52,9 @@ export function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="font-sans text-[0.82rem] font-medium text-white/50 hover:text-white transition-colors duration-200 no-underline"
+                className={`font-sans text-[0.82rem] font-medium transition-colors duration-200 no-underline ${
+                  isActive(link.href) ? 'text-accent' : 'text-white/50 hover:text-white'
+                }`}
               >
                 {link.label}
               </a>
@@ -57,13 +64,15 @@ export function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="mailto:trybild@gmail.com"
-              className="font-sans text-[0.8rem] font-medium text-white/50 hover:text-white transition-colors duration-200 no-underline"
+              href="/contact"
+              className={`font-sans text-[0.8rem] font-medium transition-colors duration-200 no-underline ${
+                isActive('/contact') ? 'text-accent' : 'text-white/50 hover:text-white'
+              }`}
             >
               Contact
             </a>
             <a
-              href="#products"
+              href="/products"
               className="font-sans text-[0.8rem] font-semibold text-black bg-white hover:bg-white/90 px-4 py-1.5 rounded-sm transition-all duration-200 no-underline"
             >
               See products
@@ -97,15 +106,19 @@ export function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="font-sans text-2xl font-medium text-white/80 hover:text-white no-underline"
+                  className={`font-sans text-2xl font-medium no-underline ${
+                    isActive(link.href) ? 'text-accent' : 'text-white/80 hover:text-white'
+                  }`}
                 >
                   {link.label}
                 </a>
               ))}
               <a
-                href="mailto:trybild@gmail.com"
+                href="/contact"
                 onClick={() => setMobileOpen(false)}
-                className="font-sans text-2xl font-medium text-white/80 hover:text-white no-underline"
+                className={`font-sans text-2xl font-medium no-underline ${
+                  isActive('/contact') ? 'text-accent' : 'text-white/80 hover:text-white'
+                }`}
               >
                 Contact
               </a>
