@@ -47,6 +47,7 @@ const PRODUCTS: Product[] = [
       { label: 'JELLYCLAW.IN', href: 'https://jellyclaw.in' },
       { label: 'GITHUB', href: 'https://github.com/JellyClaw-org/jellyclaw' },
       { label: 'R/JELLYCLAW', href: 'https://reddit.com/r/JellyClaw' },
+      { label: 'DISCORD', href: 'https://discord.gg/jellyclaw' },
     ],
   },
   {

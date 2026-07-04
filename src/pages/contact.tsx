@@ -10,6 +10,7 @@ const ITEMS: { label: string; value: string; href?: string }[] = [
   { label: 'X', value: '@TRYBILD', href: 'https://x.com/trybild' },
   { label: 'GITHUB', value: 'GITHUB.COM/TRYBILD', href: 'https://github.com/trybild' },
   { label: 'REDDIT', value: 'R/JELLYCLAW', href: 'https://reddit.com/r/JellyClaw' },
+  { label: 'DISCORD', value: 'JELLYCLAW SERVER', href: 'https://discord.gg/jellyclaw' },
   { label: 'JELLYCLAW', value: 'JELLYCLAW.IN', href: 'https://jellyclaw.in' },
   { label: 'LOCATION', value: 'MUMBAI, INDIA' },
 ]
