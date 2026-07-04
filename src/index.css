@@ -11,94 +11,77 @@
 
   html {
     scroll-behavior: smooth;
-    cursor: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    background-color: #100E0D;
-    color: #F0EEEB;
-    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #140d0a;
+    color: #e9d8cc;
+    font-family: 'VT323', monospace;
+    font-size: 19px;
     overflow-x: hidden;
     min-height: 100vh;
   }
 
-  @media (max-width: 768px) {
-    html { cursor: auto; }
-  }
-
   ::selection {
-    background: rgba(255, 69, 20, 0.25);
-    color: #F0EEEB;
+    background: rgba(254, 60, 0, 0.35);
+    color: #fff;
+  }
+}
+
+@layer components {
+  /* Pixel button: 4px border, hard corners, "pressed" on click */
+  .btn-pixel {
+    display: inline-block;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #fff;
+    background: #1c120c;
+    border: 4px solid #3a2618;
+    padding: 12px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 1.6;
+  }
+  .btn-pixel:hover {
+    border-color: #fe3c00;
+    background: #241610;
+  }
+  .btn-pixel:active {
+    transform: translateY(2px);
   }
 }
 
 @layer utilities {
-  .text-stroke-white-sm {
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.08);
+  /* CRT scanline overlay — put .crt on the page's root wrapper */
+  .crt::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.16) 0 2px,
+      transparent 2px 4px
+    );
   }
 
-  .text-stroke-black-sm {
-    color: transparent;
-    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.06);
+  /* Blinking block cursor ▊ */
+  .pixel-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 16px;
+    background: #fe3c00;
+    vertical-align: -2px;
+    margin-left: 4px;
+    animation: pixel-blink 1s steps(1) infinite;
   }
 
-  .bg-grid-dark {
-    background-image:
-      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-
-  .bg-grid-light {
-    background-image:
-      linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-
-  .accent-glow {
-    background: radial-gradient(ellipse 60% 50% at 20% 50%, rgba(255, 69, 20, 0.07), transparent);
-  }
-
-  .border-d {
-    border-color: rgba(255, 255, 255, 0.07);
-  }
-
-  /* Subtle diagonal near-black → warm brown, brand section background */
-  .bg-brand-gradient {
-    background-image: linear-gradient(135deg, #100E0D 0%, #100E0D 40%, #3A1E10 145%);
-  }
-
-  .bg-brand-gradient-r {
-    background-image: linear-gradient(-135deg, #100E0D 0%, #100E0D 40%, #3A1E10 145%);
-  }
-
-  /* JellyClaw night sky */
-  .bg-night-gradient {
-    background-image: linear-gradient(160deg, #060814 0%, #181030 100%);
-  }
-
-  .starfield,
-  .starfield-2 {
-    background-image:
-      radial-gradient(1px 1px at 22px 34px, rgba(255, 255, 255, 0.55), transparent),
-      radial-gradient(1px 1px at 118px 92px, rgba(255, 255, 255, 0.35), transparent),
-      radial-gradient(1.5px 1.5px at 196px 152px, rgba(255, 140, 200, 0.4), transparent),
-      radial-gradient(1px 1px at 76px 188px, rgba(255, 255, 255, 0.45), transparent);
-    background-size: 260px 260px;
-  }
-
-  .starfield-2 {
-    background-position: 130px 90px;
-    background-size: 340px 340px;
-    animation: twinkle 7s ease-in-out infinite;
-  }
-
-  @keyframes twinkle {
-    0%, 100% { opacity: 0.9; }
-    50%      { opacity: 0.3; }
+  @keyframes pixel-blink {
+    50% { opacity: 0; }
   }
 }
