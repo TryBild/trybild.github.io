@@ -33,6 +33,15 @@ const PRODUCTS = [
   { label: 'RENTPEY', href: '/products#rentpey' },
 ]
 
+const LEGAL = [
+  { label: 'PRIVACY', href: '/attendr/privacy' },
+  { label: 'TERMS', href: '/attendr/terms' },
+  { label: 'REFUND POLICY', href: '/attendr/refund' },
+  { label: 'PRICING', href: '/attendr/pricing' },
+  { label: 'DELETE ACCOUNT', href: '/attendr/delete-account' },
+  { label: 'CONTACT', href: '/contact' },
+]
+
 const COMPANY = [
   { label: 'ABOUT', href: '/about' },
   { label: 'CONTACT', href: '/contact' },
@@ -81,6 +90,16 @@ export function Footer() {
                 {COMPANY.map((c) => (
                   <a key={c.label} href={c.href} className={linkClass}>
                     {c.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p className="font-pixel text-[8px] text-white mb-4">ATTENDR</p>
+              <div className="flex flex-col gap-2.5">
+                {LEGAL.map((l) => (
+                  <a key={l.label} href={l.href} className={linkClass}>
+                    {l.label}
                   </a>
                 ))}
               </div>
