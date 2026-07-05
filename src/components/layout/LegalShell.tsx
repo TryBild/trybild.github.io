@@ -28,10 +28,34 @@ export function BusinessIdentity() {
   )
 }
 
-export function Section({ title, children }: { title: string; children?: ReactNode }) {
+// Table of contents: anchor links that smooth-scroll to same-page sections
+// (html { scroll-behavior: smooth } already set globally in index.css).
+export function Toc({ items }: { items: { id: string; title: string }[] }) {
+  return (
+    <nav aria-label="Table of contents" className="border-4 border-line bg-surface px-5 py-4">
+      <p className="font-pixel text-[8px] text-muted mb-3">CONTENTS</p>
+      <ol className="list-none flex flex-col gap-1.5">
+        {items.map((item, i) => (
+          <li key={item.id}>
+            <a
+              href={`#${item.id}`}
+              className="font-vt text-[19px] tracking-[1px] text-amber hover:text-accent transition-colors duration-150 no-underline"
+            >
+              <span className="text-accent">&gt;</span> {i + 1}. {item.title}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+}
+
+export function Section({ id, title, children }: { id?: string; title: string; children?: ReactNode }) {
   return (
     <section>
-      <h2 className="font-pixel text-[10px] sm:text-[11px] text-accent leading-[1.8]">{title}</h2>
+      <h2 id={id} className="font-pixel text-[10px] sm:text-[11px] text-accent leading-[1.8] scroll-mt-24">
+        {title}
+      </h2>
       <div className="font-vt text-[20px] text-cream leading-[1.35] mt-3 flex flex-col gap-3">
         {children}
       </div>
