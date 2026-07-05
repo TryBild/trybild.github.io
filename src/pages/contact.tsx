@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import '@/index.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
+import { BusinessIdentity } from '@/components/layout/LegalShell'
 
 const ITEMS: { label: string; value: string; href?: string }[] = [
   { label: 'EMAIL', value: 'HELLO@TRYBILD.COM', href: 'mailto:hello@trybild.com' },
@@ -59,6 +60,15 @@ function ContactPage() {
               </div>
             ),
           )}
+        </div>
+
+        <p className="font-vt text-[20px] text-cream mt-8 max-w-[640px]">
+          <span className="text-accent">&gt; SUPPORT HOURS:</span> MON–SAT, 10 AM – 7 PM IST. WE
+          RESPOND WITHIN 24–48 HOURS.
+        </p>
+
+        <div className="max-w-[640px]">
+          <BusinessIdentity />
         </div>
       </main>
 

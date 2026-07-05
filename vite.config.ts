@@ -3,12 +3,13 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 import fs from 'fs'
 
-// Every top-level *.html file is a page entry (index, products, about, contact, …).
+// Every top-level *.html file is a page entry (index, products, about, contact, …),
+// plus nested attendr/*/index.html pages (served as /attendr/<name>/ on GitHub Pages).
 const pages = Object.fromEntries(
-  fs
-    .readdirSync(__dirname)
-    .filter((f) => f.endsWith('.html'))
-    .map((f) => [f.replace('.html', ''), path.resolve(__dirname, f)]),
+  [
+    ...fs.readdirSync(__dirname).filter((f) => f.endsWith('.html')),
+    ...fs.readdirSync(path.resolve(__dirname, 'attendr')).map((d) => `attendr/${d}/index.html`),
+  ].map((f) => [f.replace(/(\/index)?\.html$/, ''), path.resolve(__dirname, f)]),
 )
 
 // GitHub Pages serves /products as products.html; do the same in `vite dev`.
@@ -18,8 +19,9 @@ function cleanUrls(): Plugin {
     configureServer(server) {
       server.middlewares.use((req, _res, next) => {
         const clean = req.url?.split(/[?#]/)[0]
-        if (clean && clean !== '/' && pages[clean.slice(1)]) {
-          req.url = `${clean}.html`
+        const page = clean && clean !== '/' && pages[clean.replace(/\/$/, '').slice(1)]
+        if (page) {
+          req.url = `/${path.relative(__dirname, page)}`
         }
         next()
       })
