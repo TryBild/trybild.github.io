@@ -8,11 +8,22 @@ export function BusinessIdentity() {
     <div className="border-4 border-line bg-surface px-5 py-4 mt-12">
       <p className="font-pixel text-[8px] text-muted mb-3">BUSINESS DETAILS</p>
       <p className="font-vt text-[20px] text-cream">
-        TryBild (Sole Proprietorship — Proprietor: Rahul Yadav)
+        TryBild (Sole Proprietorship — Proprietor: Rahul Satiram Yadav)
       </p>
       <p className="font-vt text-[19px] text-muted mt-1">
-        T 9 A, Room No. 303, Juhu Koliwada, H. B. Gawde Marg, Near Vitthal Mandir, Juhu, Santacruz
-        (West), Mumbai, Maharashtra, India (PO: Juhu)
+        T9A, Room No. 303, Juhu Koliwada, H.B. Gawde Marg, Near Vitthal Mandir, Santacruz (West),
+        Mumbai, Maharashtra 400049
+      </p>
+      <p className="font-vt text-[19px] text-muted mt-1">Udyam Reg: UDYAM-MH-19-0448043</p>
+      <p className="font-vt text-[19px] text-muted mt-1">
+        Phone:{' '}
+        <a href="tel:+917738821379" className="text-amber hover:text-accent no-underline">
+          +91 77388 21379
+        </a>{' '}
+        · Email:{' '}
+        <a href="mailto:rahul@trybild.com" className="text-amber hover:text-accent no-underline">
+          rahul@trybild.com
+        </a>
       </p>
       <p className="font-vt text-[19px] text-muted mt-1">
         Support &amp; privacy:{' '}
