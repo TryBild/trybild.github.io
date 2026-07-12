@@ -9,7 +9,7 @@ const ITEMS: { label: string; value: string; href?: string }[] = [
   { label: 'EMAIL', value: 'RAHUL@TRYBILD.COM', href: 'mailto:rahul@trybild.com' },
   { label: 'GENERAL', value: 'HELLO@TRYBILD.COM', href: 'mailto:hello@trybild.com' },
   { label: 'SUPPORT', value: 'SUPPORT@TRYBILD.COM', href: 'mailto:support@trybild.com' },
-  { label: 'PHONE', value: '+91 77388 21379', href: 'tel:+917738821379' },
+  { label: 'PHONE', value: '+91 89766 83099', href: 'tel:+918976683099' },
   { label: 'X', value: '@TRYBILD', href: 'https://x.com/trybild' },
   { label: 'GITHUB', value: 'GITHUB.COM/TRYBILD', href: 'https://github.com/trybild' },
   { label: 'REDDIT', value: 'R/JELLYCLAW', href: 'https://reddit.com/r/JellyClaw' },
