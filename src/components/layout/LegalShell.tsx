@@ -17,8 +17,8 @@ export function BusinessIdentity() {
       <p className="font-vt text-[19px] text-muted mt-1">Udyam Reg: UDYAM-MH-19-0448043</p>
       <p className="font-vt text-[19px] text-muted mt-1">
         Phone:{' '}
-        <a href="tel:+917738821379" className="text-amber hover:text-accent no-underline">
-          +91 77388 21379
+        <a href="tel:+918976683099" className="text-amber hover:text-accent no-underline">
+          +91 89766 83099
         </a>{' '}
         · Email:{' '}
         <a href="mailto:rahul@trybild.com" className="text-amber hover:text-accent no-underline">
