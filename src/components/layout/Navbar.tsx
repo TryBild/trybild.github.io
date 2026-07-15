@@ -1,7 +1,7 @@
 import { PixelLogo } from '@/components/common/PixelLogo'
 
-const NAV_LINKS = [
-  { label: 'PRODUCTS', href: '/products' },
+const NAV_LINKS: { label: string; href?: string }[] = [
+  { label: 'PRODUCTS' },
   { label: 'ABOUT', href: '/about' },
   { label: 'CONTACT', href: '/contact' },
 ]
@@ -13,7 +13,7 @@ const PRODUCT_LINKS = [
   { label: 'JELLYCLAW', href: '/jellyclaw' },
 ]
 
-// GitHub Pages serves /products.html at /products — normalize both to one form.
+// GitHub Pages serves e.g. /about.html at /about — normalize both to one form.
 const currentPath = window.location.pathname.replace(/\.html$/, '')
 
 export function Navbar() {
@@ -32,14 +32,9 @@ export function Navbar() {
           {NAV_LINKS.map((link) =>
             link.label === 'PRODUCTS' ? (
               <div key={link.label} className="relative group/products">
-                <a
-                  href={link.href}
-                  className={`font-pixel text-[8px] sm:text-[9px] no-underline transition-colors duration-150 ${
-                    link.href === currentPath ? 'text-accent' : 'text-muted hover:text-accent'
-                  }`}
-                >
+                <span className="font-pixel text-[8px] sm:text-[9px] text-muted cursor-default select-none">
                   {link.label}
-                </a>
+                </span>
 
                 <div className="hidden group-hover/products:block absolute top-full left-0 pt-2 z-50">
                   <div className="bg-black border-2 border-accent min-w-[190px]">

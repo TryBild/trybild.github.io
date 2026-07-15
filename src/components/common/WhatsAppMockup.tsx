@@ -28,12 +28,12 @@ const STATS = [
 /**
  * Pixel frame outside, real WhatsApp dark theme inside (realism is the point,
  * so the chat uses system sans and rounded bubbles — the one allowed exception
- * to the sharp-corner rule). The whole card links to the TruckHisaab section.
+ * to the sharp-corner rule). The whole card links to the TruckHisaab page.
  */
 export function WhatsAppMockup() {
   return (
     <a
-      href="/products#truckhisaab"
+      href="/truckhisaab"
       className="block w-full max-w-[420px] no-underline cursor-pointer group select-none"
     >
       {/* Pixel frame */}
