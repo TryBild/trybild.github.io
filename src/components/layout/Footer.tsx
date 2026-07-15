@@ -37,6 +37,7 @@ const LEGAL = [
   { label: 'TERMS', href: '/terms' },
   { label: 'PRIVACY', href: '/privacy' },
   { label: 'REFUND POLICY', href: '/refund' },
+  { label: 'COOKIE POLICY', href: '/cookies' },
   { label: 'CONTACT', href: '/contact' },
 ]
 
