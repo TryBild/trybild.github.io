@@ -83,7 +83,7 @@ function RefundPage() {
         </>
       }
     >
-      <p className="font-vt text-[19px] text-muted">Last updated: 5 July 2026</p>
+      <p className="text-[14px] text-muted">Last updated: 5 July 2026</p>
 
       <Toc items={SECTIONS} />
 

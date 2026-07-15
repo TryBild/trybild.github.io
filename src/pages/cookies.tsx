@@ -60,13 +60,13 @@ const SECTIONS: { id: string; title: string; body: ReactNode }[] = [
     title: 'HOW TRYBILD USES COOKIES',
     body: (
       <div className="overflow-x-auto">
-        <table className="w-full border-4 border-line border-collapse min-w-[640px]">
+        <table className="w-full border border-line border-collapse min-w-[640px] rounded-xl overflow-hidden">
           <thead>
             <tr className="bg-surface-2">
               {['COOKIE NAME', 'TYPE', 'PURPOSE', 'DURATION'].map((h) => (
                 <th
                   key={h}
-                  className="font-pixel text-[8px] text-white text-left px-4 py-3 border-4 border-line"
+                  className="text-[13px] font-semibold text-charcoal text-left px-4 py-3 border border-line"
                 >
                   {h}
                 </th>
@@ -76,16 +76,12 @@ const SECTIONS: { id: string; title: string; body: ReactNode }[] = [
           <tbody>
             {COOKIES.map((c) => (
               <tr key={c.name} className="bg-surface">
-                <td className="font-vt text-[19px] text-amber px-4 py-3 border-4 border-line">
-                  {c.name}
-                </td>
-                <td className="font-vt text-[19px] text-cream px-4 py-3 border-4 border-line">
-                  {c.type}
-                </td>
-                <td className="font-vt text-[19px] text-cream px-4 py-3 border-4 border-line">
+                <td className="text-[15px] text-amber px-4 py-3 border border-line">{c.name}</td>
+                <td className="text-[15px] text-charcoal px-4 py-3 border border-line">{c.type}</td>
+                <td className="text-[15px] text-charcoal px-4 py-3 border border-line">
                   {c.purpose}
                 </td>
-                <td className="font-vt text-[19px] text-cream px-4 py-3 border-4 border-line">
+                <td className="text-[15px] text-charcoal px-4 py-3 border border-line">
                   {c.duration}
                 </td>
               </tr>
@@ -193,10 +189,10 @@ function CookiesPage() {
         </>
       }
     >
-      <p className="font-vt text-[19px] text-muted">Last updated: 15 July 2026</p>
+      <p className="text-[14px] text-muted">Last updated: 15 July 2026</p>
 
-      <div className="border-l-4 border-amber bg-surface px-5 py-4">
-        <p className="font-vt text-[20px] text-cream">
+      <div className="border-l-4 border-amber bg-surface-2 rounded-r-xl px-6 py-4">
+        <p className="text-[16px] text-charcoal">
           TryBild uses only essential cookies needed to run the website. We use no advertising,
           tracking, or third-party analytics cookies.
         </p>

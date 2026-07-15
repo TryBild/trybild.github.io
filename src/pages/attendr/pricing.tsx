@@ -38,19 +38,19 @@ function PricingPage() {
       }
     >
       <div className="overflow-x-auto">
-        <table className="w-full border-4 border-line border-collapse min-w-[640px]">
+        <table className="w-full border border-line border-collapse min-w-[640px] rounded-xl overflow-hidden">
           <thead>
             <tr className="bg-surface-2">
-              <th className="font-pixel text-[8px] text-white text-left px-5 py-4 border-4 border-line">
+              <th className="text-[13px] font-semibold text-charcoal text-left px-5 py-4 border border-line">
                 PLAN
               </th>
-              <th className="font-pixel text-[8px] text-white text-left px-5 py-4 border-4 border-line">
+              <th className="text-[13px] font-semibold text-charcoal text-left px-5 py-4 border border-line">
                 MONTHLY
               </th>
-              <th className="font-pixel text-[8px] text-white text-left px-5 py-4 border-4 border-line">
+              <th className="text-[13px] font-semibold text-charcoal text-left px-5 py-4 border border-line">
                 YEARLY
               </th>
-              <th className="font-pixel text-[8px] text-white text-left px-5 py-4 border-4 border-line">
+              <th className="text-[13px] font-semibold text-charcoal text-left px-5 py-4 border border-line">
                 TEAM SIZE
               </th>
             </tr>
@@ -58,16 +58,16 @@ function PricingPage() {
           <tbody>
             {PLANS.map((p) => (
               <tr key={p.name} className="bg-surface">
-                <td className="font-pixel text-[8px] text-amber px-5 py-4 border-4 border-line">
+                <td className="text-[15px] font-semibold text-amber px-5 py-4 border border-line">
                   {p.name}
                 </td>
-                <td className="font-vt text-[20px] text-cream px-5 py-4 border-4 border-line">
+                <td className="text-[15px] text-charcoal px-5 py-4 border border-line">
                   {p.monthly}
                 </td>
-                <td className="font-vt text-[20px] text-cream px-5 py-4 border-4 border-line">
+                <td className="text-[15px] text-charcoal px-5 py-4 border border-line">
                   {p.yearly}
                 </td>
-                <td className="font-vt text-[20px] text-cream px-5 py-4 border-4 border-line">
+                <td className="text-[15px] text-charcoal px-5 py-4 border border-line">
                   {p.team}
                 </td>
               </tr>
@@ -76,9 +76,9 @@ function PricingPage() {
         </table>
       </div>
 
-      <p className="font-vt text-[19px] text-muted">
+      <p className="text-[14px] text-muted">
         All prices exclusive of applicable GST. Custom plans:{' '}
-        <a href="mailto:hello@trybild.com" className="text-amber hover:text-accent no-underline">
+        <a href="mailto:hello@trybild.com" className="text-brand hover:underline">
           hello@trybild.com
         </a>
       </p>
