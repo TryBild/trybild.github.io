@@ -1,98 +1,50 @@
-import { WhatsAppMockup } from '@/components/common/WhatsAppMockup'
-
-const PRODUCTS = [
-  { id: 'truckhisaab', name: ['TRUCK', 'HISAAB'], badge: '● LIVE', badgeClass: 'text-amber' },
-  { id: 'attendr', name: ['ATTENDR'], badge: '● LIVE', badgeClass: 'text-amber' },
-  { id: 'jellyclaw', name: ['JELLY', 'CLAW'], badge: 'OPEN SOURCE', badgeClass: 'text-jelly' },
-  { id: 'rentpey', name: ['RENTPEY'], badge: 'IN DEV', badgeClass: 'text-muted' },
-]
-
-// Verified real numbers — keep as-is.
 const STATS = [
-  { value: '4', label: 'PRODUCTS' },
-  { value: '1000+', label: 'USERS ON WHATSAPP' },
-  { value: '0', label: 'APP DOWNLOADS NEEDED' },
-  { value: '2025', label: 'FOUNDED, MUMBAI' },
+  { value: '4', label: 'Products' },
+  { value: '1000+', label: 'WhatsApp users' },
+  { value: '0', label: 'App downloads needed' },
+  { value: '2025', label: 'Founded, Mumbai' },
 ]
 
 export function Hero() {
   return (
-    <>
-      {/* Hero */}
-      <section className="text-center px-4 sm:px-6 pt-12 md:pt-16 pb-4">
-        <div className="inline-block border-[3px] border-amber text-amber font-vt text-[18px] tracking-[2px] px-3 py-0.5">
-          4 PRODUCTS · MUMBAI, INDIA
-          <span className="pixel-cursor" />
-        </div>
-
-        <h1 className="font-pixel text-white leading-[1.8] mt-8 text-[15px] sm:text-[20px] md:text-[26px]">
-          AI-POWERED TOOLS
+    <section className="max-w-[1200px] mx-auto px-6 pt-16 pb-4 md:pt-20">
+      <div className="grid md:grid-cols-[60%_40%] gap-10 items-center">
+        <h1 className="text-[40px] sm:text-[56px] md:text-[64px] font-bold text-charcoal leading-[1.1] tracking-[-0.02em]">
+          Tools that <span className="underline decoration-brand text-brand">work</span>.
           <br />
-          FOR <span className="text-accent">MODERN</span>
+          For businesses that
           <br />
-          BUSINESSES.
+          can&apos;t afford to wait.
         </h1>
 
-        <p className="font-vt text-[21px] text-muted mt-4">SELECT A PRODUCT TO CONTINUE ▼</p>
-
-        <div className="flex flex-wrap justify-center gap-3 mt-8">
-          <a href="#products" className="btn-pixel">
-            SEE OUR PRODUCTS
-          </a>
-          <a href="/about" className="btn-pixel">
-            OUR STORY
-          </a>
-        </div>
-      </section>
-
-      {/* Level-select product grid */}
-      <section id="products" className="max-w-[1100px] mx-auto px-4 sm:px-6 py-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {PRODUCTS.map((p) => (
-            <a
-              key={p.id}
-              href={`/${p.id}`}
-              className="border-4 border-line bg-surface hover:border-accent hover:bg-surface-2 transition-colors duration-150 px-3 py-5 text-center no-underline"
-            >
-              <div className="font-pixel text-[9px] sm:text-[10px] text-white leading-[1.6]">
-                {p.name.map((line, i) => (
-                  <span key={line}>
-                    {i > 0 && <br />}
-                    {line}
-                  </span>
-                ))}
-              </div>
-              <div className={`font-vt text-[17px] tracking-[1px] mt-3 ${p.badgeClass}`}>
-                {p.badge}
-              </div>
+        <div>
+          <p className="text-[18px] text-muted leading-[1.7]">
+            TryBild builds practical software for Indian SMBs — GPS attendance, WhatsApp fleet
+            management, and open-source local AI. Built in Mumbai.
+          </p>
+          <div className="flex flex-wrap gap-3 mt-6">
+            <a href="#products" className="btn-primary">
+              See our products
             </a>
-          ))}
+            <a href="/about" className="btn-secondary">
+              Our story
+            </a>
+          </div>
         </div>
-      </section>
-
-      {/* TruckHisaab live mockup */}
-      <section className="max-w-[1100px] mx-auto px-4 sm:px-6 py-8 flex flex-col items-center">
-        <p className="font-vt text-[21px] text-cream mb-5">
-          <span className="text-accent">&gt; TRUCKHISAAB:</span> SEE IT IN ACTION
-          <span className="pixel-cursor" />
-        </p>
-        <WhatsAppMockup />
-      </section>
+      </div>
 
       {/* Stats strip */}
-      <section className="border-t-4 border-line-2 mt-8">
-        <div className="max-w-[1100px] mx-auto grid grid-cols-2 md:grid-cols-4">
-          {STATS.map((stat, i) => (
-            <div
-              key={stat.label}
-              className={`py-6 px-4 sm:px-6 text-center ${i !== 0 ? 'border-l-4 border-line-2' : ''}`}
-            >
-              <p className="font-pixel text-[14px] sm:text-[16px] text-white">{stat.value}</p>
-              <p className="font-vt text-[17px] text-muted mt-2 tracking-[1px]">{stat.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-    </>
+      <div className="grid grid-cols-2 md:grid-cols-4 mt-16 border-t border-line">
+        {STATS.map((stat, i) => (
+          <div
+            key={stat.label}
+            className={`py-6 px-4 sm:px-6 text-center ${i !== 0 ? 'border-l border-line' : ''}`}
+          >
+            <p className="text-[32px] font-bold text-charcoal">{stat.value}</p>
+            <p className="text-[14px] text-muted mt-2">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </section>
   )
 }

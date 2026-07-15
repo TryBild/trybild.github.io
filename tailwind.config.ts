@@ -9,22 +9,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Retro pixel-arcade palette
-        black:        '#140d0a',  // page background
-        surface:      '#1c120c',  // card/panel background
-        'surface-2':  '#241610',  // panel hover/active
-        line:         '#3a2618',  // default 4px borders
-        'line-2':     '#2b1c12',  // nav/footer divider borders
-        white:        '#ffffff',  // headings
-        cream:        '#e9d8cc',  // body text
+        // Anthropic-style clean palette
+        cream:        '#f5f0e8',  // page background
+        charcoal:     '#1a1a1a',  // primary text, dark sections, primary buttons
+        'charcoal-2': '#2a2a2a',  // dark card bg, primary button hover
+        surface:      '#ffffff',  // card background
+        'surface-2':  '#f0ece4',  // hover / header row tint
+        line:         '#e0dbd0',  // borders, dividers (light contexts)
+        'line-2':     '#2a2a2a',  // dividers on dark backgrounds (e.g. footer)
+        muted:        '#6b6b6b',  // secondary text
         accent:       '#fe3c00',  // TryBild orange
-        amber:        '#ffb000',  // badges, LIVE status, footer links
-        jelly:        '#ff4fa3',  // JellyClaw OPEN SOURCE badge only
-        muted:        '#c9a48f',  // muted text (minimum contrast)
+        brand:        '#fe3c00',  // alias of accent, used for CTAs/links
+        'brand-hover':'#e03500',
+        amber:        '#b45309',  // secondary highlight text (legal-page tables)
       },
       fontFamily: {
-        pixel: ['"Press Start 2P"', 'monospace'],
-        vt:    ['VT323', 'monospace'],
+        sans: ['Inter', 'sans-serif'],
       },
     },
   },

@@ -5,33 +5,35 @@ import { Footer } from '@/components/layout/Footer'
 // Business identity block required on every compliance page (Play Store / Razorpay).
 export function BusinessIdentity() {
   return (
-    <div className="border-4 border-line bg-surface px-5 py-4 mt-12">
-      <p className="font-pixel text-[8px] text-muted mb-3">BUSINESS DETAILS</p>
-      <p className="font-vt text-[20px] text-cream">
+    <div className="border border-line bg-surface-2 rounded-xl px-6 py-5 mt-12">
+      <p className="text-[13px] font-semibold tracking-[0.08em] text-muted uppercase mb-3">
+        Business details
+      </p>
+      <p className="text-[16px] text-charcoal">
         TryBild (Sole Proprietorship — Proprietor: Rahul Satiram Yadav)
       </p>
-      <p className="font-vt text-[19px] text-muted mt-1">
+      <p className="text-[15px] text-muted mt-1">
         T9A, Room No. 303, Juhu Koliwada, H.B. Gawde Marg, Near Vitthal Mandir, Santacruz (West),
         Mumbai, Maharashtra 400049
       </p>
-      <p className="font-vt text-[19px] text-muted mt-1">Udyam Reg: UDYAM-MH-19-0448043</p>
-      <p className="font-vt text-[19px] text-muted mt-1">
+      <p className="text-[15px] text-muted mt-1">Udyam Reg: UDYAM-MH-19-0448043</p>
+      <p className="text-[15px] text-muted mt-1">
         Phone:{' '}
-        <a href="tel:+918976683099" className="text-amber hover:text-accent no-underline">
+        <a href="tel:+918976683099" className="text-brand hover:underline">
           +91 89766 83099
         </a>{' '}
         · Email:{' '}
-        <a href="mailto:rahul@trybild.com" className="text-amber hover:text-accent no-underline">
+        <a href="mailto:rahul@trybild.com" className="text-brand hover:underline">
           rahul@trybild.com
         </a>
       </p>
-      <p className="font-vt text-[19px] text-muted mt-1">
+      <p className="text-[15px] text-muted mt-1">
         Support &amp; privacy:{' '}
-        <a href="mailto:support@trybild.com" className="text-amber hover:text-accent no-underline">
+        <a href="mailto:support@trybild.com" className="text-brand hover:underline">
           support@trybild.com
         </a>{' '}
         · General:{' '}
-        <a href="mailto:hello@trybild.com" className="text-amber hover:text-accent no-underline">
+        <a href="mailto:hello@trybild.com" className="text-brand hover:underline">
           hello@trybild.com
         </a>
       </p>
@@ -43,16 +45,15 @@ export function BusinessIdentity() {
 // (html { scroll-behavior: smooth } already set globally in index.css).
 export function Toc({ items }: { items: { id: string; title: string }[] }) {
   return (
-    <nav aria-label="Table of contents" className="border-4 border-line bg-surface px-5 py-4">
-      <p className="font-pixel text-[8px] text-muted mb-3">CONTENTS</p>
+    <nav aria-label="Table of contents" className="border border-line bg-surface-2 rounded-xl px-6 py-5">
+      <p className="text-[13px] font-semibold tracking-[0.08em] text-muted uppercase mb-3">
+        Contents
+      </p>
       <ol className="list-none flex flex-col gap-1.5">
         {items.map((item, i) => (
           <li key={item.id}>
-            <a
-              href={`#${item.id}`}
-              className="font-vt text-[19px] tracking-[1px] text-amber hover:text-accent transition-colors duration-150 no-underline"
-            >
-              <span className="text-accent">&gt;</span> {i + 1}. {item.title}
+            <a href={`#${item.id}`} className="text-[15px] text-brand hover:underline">
+              {i + 1}. {item.title}
             </a>
           </li>
         ))}
@@ -64,10 +65,10 @@ export function Toc({ items }: { items: { id: string; title: string }[] }) {
 export function Section({ id, title, children }: { id?: string; title: string; children?: ReactNode }) {
   return (
     <section>
-      <h2 id={id} className="font-pixel text-[10px] sm:text-[11px] text-accent leading-[1.8] scroll-mt-24">
+      <h2 id={id} className="text-[20px] font-semibold text-charcoal mt-10 scroll-mt-24">
         {title}
       </h2>
-      <div className="font-vt text-[20px] text-cream leading-[1.35] mt-3 flex flex-col gap-3">
+      <div className="text-[16px] text-charcoal leading-[1.8] mt-3 flex flex-col gap-3">
         {children}
       </div>
     </section>
@@ -84,19 +85,15 @@ export function LegalShell({
   children: ReactNode
 }) {
   return (
-    <div className="crt bg-black min-h-screen">
+    <div className="min-h-screen bg-cream">
       <Navbar />
 
-      <main className="max-w-[820px] mx-auto px-4 sm:px-6 pt-12 md:pt-16 pb-16">
-        <div className="inline-block border-[3px] border-amber text-amber font-vt text-[18px] tracking-[2px] px-3 py-0.5">
-          {badge}
-        </div>
+      <main className="max-w-[760px] mx-auto px-6 pt-12 pb-16">
+        <p className="text-[13px] font-semibold tracking-[0.08em] text-muted uppercase">{badge}</p>
 
-        <h1 className="font-pixel text-white leading-[1.8] mt-8 text-[15px] sm:text-[20px] md:text-[24px]">
-          {title}
-        </h1>
+        <h1 className="text-[40px] font-bold text-charcoal mt-3 leading-[1.15]">{title}</h1>
 
-        <div className="mt-10 flex flex-col gap-8">{children}</div>
+        <div className="mt-8 flex flex-col gap-2">{children}</div>
 
         <BusinessIdentity />
       </main>

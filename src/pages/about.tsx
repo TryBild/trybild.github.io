@@ -3,60 +3,67 @@ import { createRoot } from 'react-dom/client'
 import '@/index.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
+import { Products } from '@/components/sections/Products'
 
-const TEAM = [
-  { name: 'RAHUL YADAV', role: 'FOUNDER' },
-  { name: 'VIRAAJ', role: 'COO' },
+const VALUES = [
+  {
+    title: 'Practical over perfect',
+    desc: 'We ship tools that work today, not vaporware for tomorrow.',
+  },
+  {
+    title: 'No bloat',
+    desc: 'WhatsApp-native means zero downloads, zero onboarding friction.',
+  },
+  {
+    title: 'Honest',
+    desc: 'No fake stats, no inflated user counts, no VC hype.',
+  },
 ]
 
 function AboutPage() {
   return (
-    <div className="crt bg-black min-h-screen">
+    <div className="min-h-screen bg-cream">
       <Navbar />
 
-      <main className="max-w-[1100px] mx-auto px-4 sm:px-6 pt-12 md:pt-16 pb-16">
-        <div className="inline-block border-[3px] border-amber text-amber font-vt text-[18px] tracking-[2px] px-3 py-0.5">
-          PRODUCT STUDIO · MUMBAI, INDIA
-        </div>
-
-        <h1 className="font-pixel text-white leading-[1.8] mt-8 text-[15px] sm:text-[20px] md:text-[24px]">
-          ABOUT
-          <br />
-          <span className="text-accent">TRYBILD.</span>
-        </h1>
-
-        <p className="font-vt text-[21px] text-muted mt-4">
-          <span className="text-accent">&gt; ABOUT:</span> WHO WE ARE
-          <span className="pixel-cursor" />
-        </p>
-
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 mt-10">
-          <div className="space-y-5 font-vt text-[21px] leading-[1.4] text-cream max-w-[480px]">
-            <p>
-              TryBild Technologies is a Mumbai-based product studio building tools for business,
-              logistics, and local AI.
-            </p>
-            <p>
-              We build TruckHisaab, Attendr, JellyClaw, and RentPey — real products for real
-              users, delivered where they already are.
+      <main>
+        <section className="max-w-[1200px] mx-auto px-6 pt-16 pb-4 md:pt-20">
+          <div className="grid md:grid-cols-[60%_40%] gap-10 items-center">
+            <h1 className="text-[40px] sm:text-[56px] md:text-[64px] font-bold text-charcoal leading-[1.1] tracking-[-0.02em]">
+              We build tools
+              <br />
+              for real businesses.
+            </h1>
+            <p className="text-[18px] text-muted leading-[1.7]">
+              TryBild Technologies is a software studio based in Juhu, Mumbai. Founded in 2025 by
+              Rahul Yadav.
             </p>
           </div>
+        </section>
 
-          <div>
-            <p className="font-pixel text-[10px] text-white mb-4">TEAM</p>
-            <div className="flex flex-col gap-3">
-              {TEAM.map((m) => (
-                <div
-                  key={m.name}
-                  className="flex items-baseline justify-between gap-4 border-4 border-line bg-surface hover:border-accent hover:bg-surface-2 transition-colors duration-150 px-5 py-4"
-                >
-                  <span className="font-pixel text-[10px] text-white leading-[1.6]">{m.name}</span>
-                  <span className="font-vt text-[17px] tracking-[1px] text-muted">{m.role}</span>
-                </div>
-              ))}
-            </div>
+        <Products />
+
+        <section className="max-w-[1200px] mx-auto px-6 py-20">
+          <h2 className="text-[32px] font-semibold text-charcoal">// Our values</h2>
+          <div className="grid md:grid-cols-3 gap-6 mt-10">
+            {VALUES.map((v) => (
+              <div key={v.title} className="bg-surface border border-line rounded-xl p-7">
+                <h3 className="text-[20px] font-semibold text-charcoal">{v.title}</h3>
+                <p className="text-[16px] text-muted mt-3 leading-[1.6]">{v.desc}</p>
+              </div>
+            ))}
           </div>
-        </div>
+        </section>
+
+        <section className="max-w-[1200px] mx-auto px-6 pb-20">
+          <h2 className="text-[32px] font-semibold text-charcoal">// The founder</h2>
+          <p className="text-[18px] text-charcoal leading-[1.7] mt-6 max-w-[640px]">
+            Rahul Yadav, Mumbai. BAF degree, US CMA, SAP FICO.{' '}
+            <a href="/contact" className="text-brand hover:underline">
+              Get in touch
+            </a>
+            .
+          </p>
+        </section>
       </main>
 
       <Footer />

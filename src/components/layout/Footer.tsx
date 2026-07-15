@@ -27,103 +27,97 @@ const SOCIALS: { label: string; href: string; icon?: LucideIcon; path?: string }
 ]
 
 const PRODUCTS = [
-  { label: 'TRUCKHISAAB', href: '/truckhisaab' },
-  { label: 'ATTENDR', href: '/attendr' },
-  { label: 'JELLYCLAW', href: '/jellyclaw' },
-  { label: 'RENTPEY', href: '/rentpey' },
-]
-
-const LEGAL = [
-  { label: 'TERMS', href: '/terms' },
-  { label: 'PRIVACY', href: '/privacy' },
-  { label: 'REFUND POLICY', href: '/refund' },
-  { label: 'COOKIE POLICY', href: '/cookies' },
+  { label: 'Attendr', href: '/attendr' },
+  { label: 'TruckHisaab', href: '/truckhisaab' },
+  { label: 'RentPey', href: '/rentpey' },
+  { label: 'JellyClaw', href: '/jellyclaw' },
 ]
 
 const COMPANY = [
-  { label: 'ABOUT', href: '/about' },
-  { label: 'CONTACT', href: '/contact' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ]
 
-const linkClass =
-  'font-vt text-[17px] tracking-[1px] text-amber hover:text-accent transition-colors duration-150 no-underline'
+const LEGAL = [
+  { label: 'Terms', href: '/terms' },
+  { label: 'Privacy', href: '/privacy' },
+  { label: 'Refund Policy', href: '/refund' },
+  { label: 'Cookie Policy', href: '/cookies' },
+]
+
+const linkClass = 'text-[15px] text-[#9a9a9a] hover:text-white transition-colors duration-150 no-underline'
+const headingClass = 'text-[12px] font-semibold tracking-[0.08em] text-[#9a9a9a] uppercase mb-4'
 
 export function Footer() {
   return (
-    <footer className="bg-black border-t-4 border-line-2 pt-10 pb-8 mt-12">
-      <div className="max-w-[1100px] mx-auto px-4 sm:px-6">
-        {/* Top */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 pb-10 border-b-4 border-line-2">
-          {/* Brand */}
+    <footer className="bg-charcoal pt-16 pb-8 mt-12">
+      <div className="max-w-[1200px] mx-auto px-6">
+        {/* Top: 4 columns */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
           <div>
-            <a
-              href="/"
-              className="inline-flex items-center gap-2.5 font-pixel text-[12px] text-white no-underline"
-            >
-              <PixelLogo />
-              TRYBILD
+            <a href="/" className="inline-flex items-center gap-2 text-[18px] font-bold text-white no-underline">
+              <PixelLogo size={22} />
+              TryBild
             </a>
-            <p className="font-vt text-[18px] text-muted mt-3">
-              TryBild Technologies · Mumbai, India
+            <p className="text-[14px] text-[#9a9a9a] mt-3 max-w-[220px]">
+              Building tools for Indian businesses. Mumbai, India.
             </p>
           </div>
 
-          {/* Links */}
-          <div className="flex gap-12 sm:gap-16">
-            <div>
-              <p className="font-pixel text-[8px] text-white mb-4">PRODUCTS</p>
-              <div className="flex flex-col gap-2.5">
-                {PRODUCTS.map((p) => (
-                  <a key={p.label} href={p.href} className={linkClass}>
-                    {p.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-            <div>
-              <p className="font-pixel text-[8px] text-white mb-4">COMPANY</p>
-              <div className="flex flex-col gap-2.5">
-                {COMPANY.map((c) => (
-                  <a key={c.label} href={c.href} className={linkClass}>
-                    {c.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-            <div>
-              <p className="font-pixel text-[8px] text-white mb-4">LEGAL</p>
-              <div className="flex flex-col gap-2.5">
-                {LEGAL.map((l) => (
-                  <a key={l.label} href={l.href} className={linkClass}>
-                    {l.label}
-                  </a>
-                ))}
-              </div>
+          <div>
+            <p className={headingClass}>Products</p>
+            <div className="flex flex-col gap-2.5">
+              {PRODUCTS.map((p) => (
+                <a key={p.label} href={p.href} className={linkClass}>
+                  {p.label}
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Social */}
-          <div className="flex flex-wrap gap-3">
-            {SOCIALS.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                {...(s.href.startsWith('http') ? { target: '_blank', rel: 'noopener' } : {})}
-                className="w-10 h-10 flex items-center justify-center border-4 border-line bg-surface text-muted hover:text-accent hover:border-accent transition-colors duration-150"
-                aria-label={s.label}
-              >
-                {s.icon ? <s.icon size={15} /> : <BrandIcon path={s.path!} />}
-              </a>
-            ))}
+          <div>
+            <p className={headingClass}>Company</p>
+            <div className="flex flex-col gap-2.5">
+              {COMPANY.map((c) => (
+                <a key={c.label} href={c.href} className={linkClass}>
+                  {c.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className={headingClass}>Legal</p>
+            <div className="flex flex-col gap-2.5">
+              {LEGAL.map((l) => (
+                <a key={l.label} href={l.href} className={linkClass}>
+                  {l.label}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
+        {/* Social row */}
+        <div className="flex flex-wrap gap-3 mt-10">
+          {SOCIALS.filter((s) => s.label !== 'Email').map((s) => (
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener"
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-[#3a3a3a] text-[#9a9a9a] hover:text-white hover:border-[#5a5a5a] transition-colors duration-150"
+              aria-label={s.label}
+            >
+              {s.icon ? <s.icon size={15} /> : <BrandIcon path={s.path!} />}
+            </a>
+          ))}
+        </div>
+
         {/* Bottom */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1 pt-5">
-          <p className="font-vt text-[17px] text-muted">
-            © 2026 TryBild Technologies. All rights reserved.
-          </p>
-          <p className="font-vt text-[17px] text-muted">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 pt-8 mt-8 border-t border-[#2a2a2a]">
+          <p className="text-[14px] text-[#9a9a9a]">© 2025 TryBild Technologies. All rights reserved.</p>
+          <p className="text-[14px] text-[#9a9a9a]">
             Established 2025 · Building tools for business, logistics &amp; local AI.
           </p>
         </div>

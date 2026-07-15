@@ -26,9 +26,9 @@ const STATS = [
 ]
 
 /**
- * Pixel frame outside, real WhatsApp dark theme inside (realism is the point,
- * so the chat uses system sans and rounded bubbles — the one allowed exception
- * to the sharp-corner rule). The whole card links to the TruckHisaab page.
+ * Clean card frame outside, real WhatsApp dark theme inside (realism is the
+ * point, so the chat keeps its native dark UI). The whole card links to the
+ * TruckHisaab page.
  */
 export function WhatsAppMockup() {
   return (
@@ -36,19 +36,17 @@ export function WhatsAppMockup() {
       href="/truckhisaab"
       className="block w-full max-w-[420px] no-underline cursor-pointer group select-none"
     >
-      {/* Pixel frame */}
-      <div className="border-4 border-line group-hover:border-accent bg-surface transition-colors duration-150">
-        {/* Terminal title bar */}
-        <div className="flex items-center justify-between gap-2 px-3 py-2 border-b-4 border-line-2">
+      {/* Card frame */}
+      <div className="border border-b-0 border-line group-hover:border-brand rounded-t-xl overflow-hidden bg-surface transition-colors duration-150">
+        {/* Title bar */}
+        <div className="flex items-center justify-between gap-2 px-4 py-2.5 border-b border-line">
           <div className="flex items-center gap-2 min-w-0">
-            <span className="font-vt text-[17px] text-muted leading-none shrink-0">● ● ●</span>
-            <span className="font-vt text-[17px] text-muted truncate">
+            <span className="text-[13px] text-muted leading-none shrink-0">● ● ●</span>
+            <span className="text-[13px] text-muted truncate">
               truckhisaab — whatsapp · active
             </span>
           </div>
-          <span className="font-vt text-[17px] tracking-[1px] text-amber shrink-0">
-            ● LIVE PRODUCT
-          </span>
+          <span className="text-[13px] font-medium text-[#2e7d32] shrink-0">● Live product</span>
         </div>
 
         {/* Real WhatsApp look inside */}
@@ -99,12 +97,12 @@ export function WhatsAppMockup() {
         </div>
       </div>
 
-      {/* Stats row — site pixel style */}
-      <div className="grid grid-cols-3 border-4 border-t-0 border-line bg-surface divide-x-4 divide-line">
+      {/* Stats row */}
+      <div className="grid grid-cols-3 border border-t-0 border-line rounded-b-xl bg-surface divide-x divide-line">
         {STATS.map((s) => (
           <div key={s.sub} className="px-2 py-3 text-center">
-            <p className="font-pixel text-[11px] text-white">{s.val}</p>
-            <p className="font-vt text-[17px] text-muted mt-1 leading-tight">{s.sub}</p>
+            <p className="text-[16px] font-semibold text-charcoal">{s.val}</p>
+            <p className="text-[13px] text-muted mt-1 leading-tight">{s.sub}</p>
           </div>
         ))}
       </div>

@@ -19,7 +19,7 @@ const PLANS = [
 ]
 
 function SubHeading({ children }: { children: ReactNode }) {
-  return <h3 className="font-pixel text-[9px] text-white leading-[1.8] mt-2">{children}</h3>
+  return <h3 className="text-[16px] font-semibold text-charcoal mt-2">{children}</h3>
 }
 
 const SECTIONS: { id: string; title: string; body: ReactNode }[] = [
@@ -81,13 +81,13 @@ const SECTIONS: { id: string; title: string; body: ReactNode }[] = [
     body: (
       <>
         <div className="overflow-x-auto">
-          <table className="w-full border-4 border-line border-collapse min-w-[640px]">
+          <table className="w-full border border-line border-collapse min-w-[640px] rounded-xl overflow-hidden">
             <thead>
               <tr className="bg-surface-2">
                 {['PLAN', 'MONTHLY', 'YEARLY', 'TEAM SIZE'].map((h) => (
                   <th
                     key={h}
-                    className="font-pixel text-[8px] text-white text-left px-4 py-3 border-4 border-line"
+                    className="text-[13px] font-semibold text-charcoal text-left px-4 py-3 border border-line"
                   >
                     {h}
                   </th>
@@ -97,14 +97,11 @@ const SECTIONS: { id: string; title: string; body: ReactNode }[] = [
             <tbody>
               {PLANS.map((row) => (
                 <tr key={row[0]} className="bg-surface">
-                  <td className="font-pixel text-[8px] text-amber px-4 py-3 border-4 border-line">
+                  <td className="text-[15px] font-semibold text-amber px-4 py-3 border border-line">
                     {row[0]}
                   </td>
                   {row.slice(1).map((cell, i) => (
-                    <td
-                      key={i}
-                      className="font-vt text-[19px] text-cream px-4 py-3 border-4 border-line"
-                    >
+                    <td key={i} className="text-[15px] text-charcoal px-4 py-3 border border-line">
                       {cell}
                     </td>
                   ))}
@@ -332,7 +329,7 @@ function TermsPage() {
         </>
       }
     >
-      <p className="font-vt text-[19px] text-muted">Last updated: 5 July 2026</p>
+      <p className="text-[14px] text-muted">Last updated: 5 July 2026</p>
 
       <Toc items={SECTIONS} />
 
