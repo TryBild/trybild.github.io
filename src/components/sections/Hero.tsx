@@ -36,7 +36,7 @@ export function Hero() {
         <p className="font-vt text-[21px] text-muted mt-4">SELECT A PRODUCT TO CONTINUE ▼</p>
 
         <div className="flex flex-wrap justify-center gap-3 mt-8">
-          <a href="/products" className="btn-pixel">
+          <a href="#products" className="btn-pixel">
             SEE OUR PRODUCTS
           </a>
           <a href="/about" className="btn-pixel">
@@ -46,12 +46,12 @@ export function Hero() {
       </section>
 
       {/* Level-select product grid */}
-      <section className="max-w-[1100px] mx-auto px-4 sm:px-6 py-8">
+      <section id="products" className="max-w-[1100px] mx-auto px-4 sm:px-6 py-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {PRODUCTS.map((p) => (
             <a
               key={p.id}
-              href={`/products#${p.id}`}
+              href={`/${p.id}`}
               className="border-4 border-line bg-surface hover:border-accent hover:bg-surface-2 transition-colors duration-150 px-3 py-5 text-center no-underline"
             >
               <div className="font-pixel text-[9px] sm:text-[10px] text-white leading-[1.6]">

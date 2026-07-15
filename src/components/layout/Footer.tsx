@@ -27,10 +27,10 @@ const SOCIALS: { label: string; href: string; icon?: LucideIcon; path?: string }
 ]
 
 const PRODUCTS = [
-  { label: 'TRUCKHISAAB', href: '/products#truckhisaab' },
-  { label: 'ATTENDR', href: '/products#attendr' },
-  { label: 'JELLYCLAW', href: '/products#jellyclaw' },
-  { label: 'RENTPEY', href: '/products#rentpey' },
+  { label: 'TRUCKHISAAB', href: '/truckhisaab' },
+  { label: 'ATTENDR', href: '/attendr' },
+  { label: 'JELLYCLAW', href: '/jellyclaw' },
+  { label: 'RENTPEY', href: '/rentpey' },
 ]
 
 const LEGAL = [
