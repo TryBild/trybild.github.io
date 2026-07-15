@@ -38,14 +38,11 @@ const LEGAL = [
   { label: 'PRIVACY', href: '/privacy' },
   { label: 'REFUND POLICY', href: '/refund' },
   { label: 'COOKIE POLICY', href: '/cookies' },
-  { label: 'ATTENDR PRICING', href: '/attendr/pricing/' },
-  { label: 'DELETE ACCOUNT', href: '/attendr/delete-account/' },
 ]
 
 const COMPANY = [
   { label: 'ABOUT', href: '/about' },
   { label: 'CONTACT', href: '/contact' },
-  { label: 'HELLO@TRYBILD.COM', href: 'mailto:hello@trybild.com' },
 ]
 
 const linkClass =
