@@ -38,22 +38,14 @@ const LEGAL = [
   { label: 'PRIVACY', href: '/privacy' },
   { label: 'REFUND POLICY', href: '/refund' },
   { label: 'COOKIE POLICY', href: '/cookies' },
-  { label: 'CONTACT', href: '/contact' },
-]
-
-const ATTENDR = [
-  { label: 'PRIVACY', href: '/attendr/privacy' },
-  { label: 'TERMS', href: '/attendr/terms' },
-  { label: 'REFUND POLICY', href: '/attendr/refund' },
-  { label: 'PRICING', href: '/attendr/pricing' },
-  { label: 'DELETE ACCOUNT', href: '/attendr/delete-account' },
+  { label: 'ATTENDR PRICING', href: '/attendr/pricing/' },
+  { label: 'DELETE ACCOUNT', href: '/attendr/delete-account/' },
 ]
 
 const COMPANY = [
   { label: 'ABOUT', href: '/about' },
   { label: 'CONTACT', href: '/contact' },
   { label: 'HELLO@TRYBILD.COM', href: 'mailto:hello@trybild.com' },
-  { label: 'SUPPORT@TRYBILD.COM', href: 'mailto:support@trybild.com' },
 ]
 
 const linkClass =
@@ -105,16 +97,6 @@ export function Footer() {
               <p className="font-pixel text-[8px] text-white mb-4">LEGAL</p>
               <div className="flex flex-col gap-2.5">
                 {LEGAL.map((l) => (
-                  <a key={l.label} href={l.href} className={linkClass}>
-                    {l.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-            <div>
-              <p className="font-pixel text-[8px] text-white mb-4">ATTENDR</p>
-              <div className="flex flex-col gap-2.5">
-                {ATTENDR.map((l) => (
                   <a key={l.label} href={l.href} className={linkClass}>
                     {l.label}
                   </a>
