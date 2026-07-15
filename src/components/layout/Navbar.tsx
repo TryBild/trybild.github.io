@@ -31,7 +31,7 @@ export function Navbar() {
       <div className="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between gap-3">
         <a href="/" className="flex items-center gap-2 text-[18px] font-bold text-charcoal no-underline">
           <PixelLogo size={22} />
-          TryBild
+          TRYB\LD
         </a>
 
         {/* Desktop nav */}
