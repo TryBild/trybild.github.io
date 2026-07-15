@@ -1,3 +1,6 @@
+import { useEffect, useState } from 'react'
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
+
 const STATS = [
   { value: '4', label: 'Products' },
   { value: '1000+', label: 'WhatsApp users' },
@@ -5,17 +8,59 @@ const STATS = [
   { value: '2025', label: 'Founded, Mumbai' },
 ]
 
+const HERO_HEADING_CLASS =
+  'text-[40px] sm:text-[56px] md:text-[64px] font-bold text-charcoal leading-[1.1] tracking-[-0.02em]'
+
 export function Hero() {
+  const { scrollY } = useScroll()
+  const smoothY = useSpring(scrollY, {
+    stiffness: 60,
+    damping: 20,
+    restDelta: 0.001,
+  })
+  const heroY = useTransform(smoothY, [0, 600], [0, -60])
+
+  const [isDesktop, setIsDesktop] = useState(false)
+  const [prefersReduced, setPrefersReduced] = useState(false)
+
+  useEffect(() => {
+    const desktopQuery = window.matchMedia('(min-width: 768px)')
+    const reducedQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+
+    setIsDesktop(desktopQuery.matches)
+    setPrefersReduced(reducedQuery.matches)
+
+    const onDesktopChange = (e: MediaQueryListEvent) => setIsDesktop(e.matches)
+    const onReducedChange = (e: MediaQueryListEvent) => setPrefersReduced(e.matches)
+
+    desktopQuery.addEventListener('change', onDesktopChange)
+    reducedQuery.addEventListener('change', onReducedChange)
+    return () => {
+      desktopQuery.removeEventListener('change', onDesktopChange)
+      reducedQuery.removeEventListener('change', onReducedChange)
+    }
+  }, [])
+
+  const heading = (
+    <>
+      Tools that <span className="underline decoration-brand text-brand">work</span>.
+      <br />
+      For businesses that
+      <br />
+      can&apos;t afford to wait.
+    </>
+  )
+
   return (
     <section className="max-w-[1200px] mx-auto px-6 pt-16 pb-4 md:pt-20">
       <div className="grid md:grid-cols-[60%_40%] gap-10 items-center">
-        <h1 className="text-[40px] sm:text-[56px] md:text-[64px] font-bold text-charcoal leading-[1.1] tracking-[-0.02em]">
-          Tools that <span className="underline decoration-brand text-brand">work</span>.
-          <br />
-          For businesses that
-          <br />
-          can&apos;t afford to wait.
-        </h1>
+        {isDesktop && !prefersReduced ? (
+          <motion.h1 className={HERO_HEADING_CLASS} style={{ y: heroY }}>
+            {heading}
+          </motion.h1>
+        ) : (
+          <h1 className={HERO_HEADING_CLASS}>{heading}</h1>
+        )}
 
         <div>
           <p className="text-[18px] text-muted leading-[1.7]">
