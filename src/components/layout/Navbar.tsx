@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { PixelLogo } from '@/components/common/PixelLogo'
+import { LogoMorph } from '@/components/common/LogoMorph'
 
 const NAV_LINKS: { label: string; href?: string }[] = [
   { label: 'PRODUCTS' },
@@ -29,9 +29,8 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-cream border-b border-line">
       <div className="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between gap-3">
-        <a href="/" className="flex items-center gap-2 text-[18px] font-bold text-charcoal no-underline">
-          <PixelLogo size={22} />
-          TRYB\LD
+        <a href="/" className="flex items-center text-[18px] font-bold text-charcoal no-underline">
+          <LogoMorph />
         </a>
 
         {/* Desktop nav */}
