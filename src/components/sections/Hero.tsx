@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 const STATS = [
   { value: '4', label: 'Products' },
@@ -12,13 +12,10 @@ const HERO_HEADING_CLASS =
   'text-[40px] sm:text-[56px] md:text-[64px] font-bold text-charcoal leading-[1.1] tracking-[-0.02em]'
 
 export function Hero() {
+  // Same raw scrollY timeline LogoMorph uses, so the two stay in lockstep.
   const { scrollY } = useScroll()
-  const smoothY = useSpring(scrollY, {
-    stiffness: 60,
-    damping: 20,
-    restDelta: 0.001,
-  })
-  const heroY = useTransform(smoothY, [0, 600], [0, -60])
+  const heroY = useTransform(scrollY, [0, 200], [0, -20], { clamp: true })
+  const heroOpacity = useTransform(scrollY, [0, 200], [1, 0.7], { clamp: true })
 
   const [isDesktop, setIsDesktop] = useState(false)
   const [prefersReduced, setPrefersReduced] = useState(false)
@@ -55,7 +52,7 @@ export function Hero() {
     <section className="max-w-[1200px] mx-auto px-6 pt-16 pb-4 md:pt-20">
       <div className="grid md:grid-cols-[60%_40%] gap-10 items-center">
         {isDesktop && !prefersReduced ? (
-          <motion.h1 className={HERO_HEADING_CLASS} style={{ y: heroY }}>
+          <motion.h1 className={HERO_HEADING_CLASS} style={{ y: heroY, opacity: heroOpacity }}>
             {heading}
           </motion.h1>
         ) : (
