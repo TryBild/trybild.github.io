@@ -29,7 +29,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-cream border-b border-line">
       <div className="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between gap-3">
-        <a href="/" className="flex items-center gap-2 text-[18px] font-bold text-charcoal no-underline">
+        <a href="/" className="flex items-center gap-2 text-[18px] font-black text-charcoal no-underline">
           <PixelLogo size={22} />
           TryBild
         </a>
