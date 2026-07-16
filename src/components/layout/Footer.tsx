@@ -110,7 +110,7 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 pt-8 mt-8 border-t border-[#2a2a2a]">
-          <p className="text-[14px] text-[#9a9a9a]">© 2025 TryBild Technologies. All rights reserved.</p>
+          <p className="text-[14px] text-[#9a9a9a]">© 2026 TryBild</p>
           <p className="text-[14px] text-[#9a9a9a]">
             Established 2025 · Building tools for business, logistics &amp; local AI.
           </p>
