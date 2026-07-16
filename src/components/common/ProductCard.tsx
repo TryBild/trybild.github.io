@@ -3,7 +3,7 @@ import { StatusBadge, type Status } from '@/components/common/StatusBadge'
 export type Product = {
   id: string
   name: string
-  status: Status
+  status: Status | 'coming-soon'
   tagline: string
   tags: string[]
   stat: string
@@ -15,28 +15,21 @@ export const PRODUCTS: Product[] = [
     id: 'attendr',
     name: 'Attendr',
     status: 'live',
-    tagline: 'GPS attendance for Indian SMBs. No app needed for employees.',
-    tags: ['Android', 'Node.js', 'MongoDB'],
-    stat: '121 paid users',
+    tagline:
+      'GPS-powered attendance management for Indian SMBs. Geofenced check-in, muster roll export, payroll-ready reports.',
+    tags: ['Android', 'GPS', 'Kotlin'],
+    stat: 'Play Store — Coming Soon',
     href: '/attendr',
   },
   {
     id: 'truckhisaab',
     name: 'TruckHisaab',
-    status: 'live',
-    tagline: 'WhatsApp fleet AI for truck owners. Hisaab on chat.',
-    tags: ['WhatsApp', 'AI', 'Fleet'],
-    stat: '1000+ users',
+    status: 'coming-soon',
+    tagline:
+      'Fleet management app for Indian truck owners. Log trips, track expenses, catch leakage — in Hindi.',
+    tags: ['Android', 'Hindi AI', 'GPS'],
+    stat: 'Play Store — Coming Soon',
     href: '/truckhisaab',
-  },
-  {
-    id: 'rentpey',
-    name: 'RentPey',
-    status: 'in-dev',
-    tagline: 'Rent collection over WhatsApp. For landlords, not accountants.',
-    tags: ['WhatsApp', 'Payments'],
-    stat: 'Active development',
-    href: '/rentpey',
   },
   {
     id: 'jellyclaw',
@@ -51,10 +44,16 @@ export const PRODUCTS: Product[] = [
 
 export function ProductCard({ product }: { product: Product }) {
   return (
-    <div className="bg-surface border border-line rounded-xl p-7 flex flex-col h-full">
+    <div className="anim-card bg-surface border border-line rounded-xl p-7 flex flex-col h-full">
       <div className="flex items-center justify-between gap-3">
         <h3 className="text-[20px] font-semibold text-charcoal">{product.name}</h3>
-        <StatusBadge status={product.status} />
+        {product.status === 'coming-soon' ? (
+          <span className="inline-block text-[13px] font-medium leading-none px-3 py-1 rounded-full border bg-[#fff8e1] text-[#f57f17] border-[#ffe082]">
+            COMING SOON
+          </span>
+        ) : (
+          <StatusBadge status={product.status} />
+        )}
       </div>
 
       <p className="text-[16px] text-muted mt-3 leading-[1.6]">{product.tagline}</p>
