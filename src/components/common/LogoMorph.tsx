@@ -8,7 +8,7 @@ function StaticWordmark() {
   return (
     <div className="flex items-center gap-2" style={{ width: FULL_WIDTH }}>
       <PixelLogo size={22} />
-      <span className="text-[18px] font-bold text-charcoal">TRYB\LD</span>
+      <span className="text-[18px] font-bold text-charcoal">TRYBILD</span>
     </div>
   )
 }
