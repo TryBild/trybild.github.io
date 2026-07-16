@@ -76,6 +76,9 @@ function JellyClawPage() {
           <a href="https://jellyclaw.in" target="_blank" rel="noopener" className="btn-secondary">
             &gt; jellyclaw.in
           </a>
+          <a href="https://discord.gg/GUbgEhHvxt" target="_blank" rel="noopener" className="btn-secondary">
+            &gt; JOIN DISCORD
+          </a>
         </div>
       </main>
 
