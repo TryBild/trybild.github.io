@@ -92,25 +92,26 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Social row */}
-        <div className="flex flex-wrap gap-3 mt-10">
-          {SOCIALS.filter((s) => s.label !== 'Email').map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              target="_blank"
-              rel="noopener"
-              className="inline-flex items-center text-[#9a9a9a] hover:text-white transition-colors duration-150"
-              aria-label={s.label}
-            >
-              {s.icon ? <s.icon size={18} /> : <BrandIcon path={s.path!} size={18} />}
-            </a>
-          ))}
-        </div>
-
-        {/* Bottom */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 pt-8 mt-8 border-t border-[#2a2a2a]">
-          <p className="text-[14px] text-[#9a9a9a]">© 2025 TryBild Technologies. All rights reserved.</p>
+        {/* Bottom bar */}
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 pt-8 mt-10 border-t border-[#2a2a2a]">
+          {/* Left: copyright + social icons stacked */}
+          <div className="flex flex-col gap-3">
+            <p className="text-[14px] text-[#9a9a9a]">© 2025 TryBild Technologies. All rights reserved.</p>
+            <div className="flex flex-wrap gap-3">
+              {SOCIALS.filter((s) => s.label !== 'Email').map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex items-center text-[#9a9a9a] hover:text-white transition-colors duration-150"
+                  aria-label={s.label}
+                >
+                  {s.icon ? <s.icon size={18} /> : <BrandIcon path={s.path!} size={18} />}
+                </a>
+              ))}
+            </div>
+          </div>
           <p className="text-[14px] text-[#9a9a9a]">
             Established 2025 · Building tools for business, logistics &amp; local AI.
           </p>
