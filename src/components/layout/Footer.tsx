@@ -14,7 +14,7 @@ function BrandIcon({ path, size = 14 }: { path: string; size?: number }) {
 
 const SOCIALS: { label: string; href: string; icon?: LucideIcon; path?: string }[] = [
   { label: 'X', href: 'https://x.com/trybild', path: X_PATH },
-  { label: 'GitHub', href: 'https://github.com/trybild', icon: Github },
+  { label: 'GitHub', href: 'https://github.com/TryBild', icon: Github },
   { label: 'YouTube', href: 'https://www.youtube.com/@trybild', icon: Youtube },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/trybild/', icon: Linkedin },
   { label: 'Email', href: 'mailto:hello@trybild.com', icon: Mail },
@@ -23,9 +23,11 @@ const SOCIALS: { label: string; href: string; icon?: LucideIcon; path?: string }
 const PRODUCTS = [
   { label: 'Attendr', href: '/attendr' },
   { label: 'TruckHisaab', href: '/truckhisaab' },
-  { label: 'RentPey', href: '/rentpey' },
-  { label: 'JellyClaw', href: '/jellyclaw' },
+  { label: 'ParentSaathi', href: '/parentsaathi' },
+  { label: 'ZapTap', href: '/zaptap' },
 ]
+
+const OPEN_SOURCE = [{ label: 'JellyClaw ↗', href: 'https://github.com/TryBild/jellyclaw' }]
 
 const COMPANY = [
   { label: 'About', href: '/about' },
@@ -46,8 +48,8 @@ export function Footer() {
   return (
     <footer className="bg-charcoal pt-16 pb-8 mt-12">
       <div className="max-w-[1200px] mx-auto px-6">
-        {/* Top: 4 columns */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+        {/* Top: 5 columns */}
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
           <div>
             <a href="/" className="inline-flex items-center gap-2 text-[18px] font-bold text-white no-underline">
               <PixelLogo size={22} />
@@ -86,6 +88,23 @@ export function Footer() {
               {LEGAL.map((l) => (
                 <a key={l.label} href={l.href} className={linkClass}>
                   {l.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className={headingClass}>Open Source</p>
+            <div className="flex flex-col gap-2.5">
+              {OPEN_SOURCE.map((o) => (
+                <a
+                  key={o.label}
+                  href={o.href}
+                  target="_blank"
+                  rel="noopener"
+                  className={linkClass}
+                >
+                  {o.label}
                 </a>
               ))}
             </div>

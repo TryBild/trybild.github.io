@@ -26,17 +26,19 @@ function AboutPage() {
       <Navbar />
 
       <main>
-        <section className="max-w-[1200px] mx-auto px-6 pt-16 pb-4 md:pt-20">
-          <div className="grid md:grid-cols-[60%_40%] gap-10 items-center">
-            <h1 className="text-[40px] sm:text-[56px] md:text-[64px] font-bold text-charcoal leading-[1.1] tracking-[-0.02em]">
-              We build tools
-              <br />
-              for real businesses.
-            </h1>
-            <p className="text-[18px] text-muted leading-[1.7]">
-              TryBild Technologies is a software studio based in Juhu, Mumbai. Founded in 2025 by
-              Rahul Yadav.
-            </p>
+        <section className="relative isolate bg-[url('/mumbai-bg.jpg')] bg-cover bg-no-repeat [background-position:center_right] before:absolute before:inset-0 before:content-[''] before:bg-black/55">
+          <div className="relative max-w-[1200px] mx-auto px-6 pt-16 pb-16 md:pt-20 md:pb-20">
+            <div className="grid md:grid-cols-[60%_40%] gap-10 items-center">
+              <h1 className="text-[40px] sm:text-[56px] md:text-[64px] font-bold text-white leading-[1.1] tracking-[-0.02em]">
+                We build tools
+                <br />
+                for real businesses.
+              </h1>
+              <p className="text-[18px] text-white/80 leading-[1.7]">
+                TryBild Technologies is a software studio based in Juhu, Mumbai. Founded in 2025 by
+                Rahul Yadav.
+              </p>
+            </div>
           </div>
         </section>
 
