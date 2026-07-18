@@ -46,8 +46,10 @@ const headingClass = 'text-[12px] font-semibold tracking-[0.08em] text-[#9a9a9a]
 
 export function Footer() {
   return (
-    <footer className="bg-charcoal pt-16 pb-8 mt-12">
-      <div className="max-w-[1200px] mx-auto px-6">
+    // bg-charcoal stays as the fallback colour behind the image.
+    <footer className="relative bg-charcoal bg-[url('/mumbai-bg.jpg')] bg-cover bg-top bg-no-repeat pt-16 pb-8 mt-12 before:absolute before:inset-0 before:content-[''] before:bg-black/[0.82] before:z-0">
+      {/* Existing wrapper doubles as the above-the-scrim layer. */}
+      <div className="relative z-10 max-w-[1200px] mx-auto px-6">
         {/* Top: 5 columns */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
           <div>
