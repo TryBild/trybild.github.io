@@ -7,7 +7,11 @@ const FULL_WIDTH = 120
 function StaticWordmark() {
   return (
     <div className="flex items-center gap-2" style={{ width: FULL_WIDTH }}>
-      <PixelLogo size={22} />
+      {/* Dark chip: the white mark would vanish on the cream navbar.
+          Sized to stay under the 28px the morph collapses to. */}
+      <span className="inline-flex shrink-0 items-center justify-center rounded-md bg-charcoal p-1">
+        <PixelLogo size={20} />
+      </span>
       <span className="text-[18px] font-bold text-charcoal">TRYBILD</span>
     </div>
   )
